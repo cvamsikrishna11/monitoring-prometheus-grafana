@@ -12,3 +12,5 @@ https://prometheus.io/docs/introduction/overview/ <br/>
 https://devopscube.com/install-configure-prometheus-linux/ <br/>
 https://devopscube.com/monitor-linux-servers-prometheus-node-exporter/ <br/>
 https://prometheus.io/docs/prometheus/latest/configuration/configuration/#ec2_sd_config <br/>
+https://devopscube.com/integrate-visualize-prometheus-grafana/ <br/>
+https://grafana.com/docs/grafana/latest/dashboards/dashboard-public/
