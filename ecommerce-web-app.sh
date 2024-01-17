@@ -31,3 +31,9 @@ rm -rf node_exporter-1.0.1.linux-amd64.tar.gz node_exporter-1.0.1.linux-amd64
 # setup the node-exporter dependencies
 sudo git clone https://github.com/cvamsikrishna11/monitoring-prometheus-grafana.git /tmp/monitoring-prometheus-grafana
 sudo cp /tmp/monitoring-prometheus-grafana/node-exporter-dependencies/node-exporter.service /etc/systemd/system/node-exporter.service
+
+# start node exporter
+sudo systemctl daemon-reload
+sudo systemctl enable node-exporter
+sudo systemctl start node-exporter
+sudo systemctl status node-exporter
