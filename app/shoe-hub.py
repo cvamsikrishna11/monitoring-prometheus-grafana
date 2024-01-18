@@ -16,5 +16,5 @@ paymentTypes = ["Card", "Cash"]
 while True:
     payment_amount = random.uniform(10, 500)
     gauge.labels(country=countries[random.randint(0,1)], payment_method=paymentTypes[random.randint(0,1)]).set(payment_amount)
-    push_to_gateway("http://34.229.14.162:9091", job="shoe-hub", registry= registry)
+    push_to_gateway("http://54.84.83.120:9091/", job="shoe-hub", registry= registry)
     time.sleep(10)

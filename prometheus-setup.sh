@@ -33,6 +33,8 @@ sudo chown prometheus:prometheus /usr/local/bin/promtool
 sudo chown -R prometheus:prometheus /etc/prometheus/consoles
 sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
 sudo chown -R prometheus:prometheus /var/lib/prometheus
+sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
+sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml.backup
 
 # start prometheus
 sudo systemctl daemon-reload
@@ -42,7 +44,7 @@ sudo systemctl start prometheus
 # Pushgateway installation
 wget https://github.com/prometheus/pushgateway/releases/download/v1.6.2/pushgateway-1.6.2.linux-amd64.tar.gz
 tar -xvzf pushgateway-1.6.2.linux-amd64.tar.gz
-sudo cp pushgateway /usr/local/bin/pushgateway
+sudo cp pushgateway-1.6.2.linux-amd64/pushgateway /usr/local/bin/pushgateway
 sudo chown prometheus:prometheus /usr/local/bin/pushgateway
 sudo cp /tmp/monitoring-prometheus-grafana/pushgateway-dependencies/pushgateway.service /etc/systemd/system/pushgateway.service
 
