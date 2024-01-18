@@ -26,10 +26,6 @@ scrape_configs:
       - targets: ['18.219.214.162:9100']  # static
       - targets: ['7.4.5.6:9100'] #static
 
-  # - job_name: 'jenkins'
-  #   metrics_path: /prometheus/
-  #   static_configs:
-  #   - targets: ['192.168.32.13:8080'] # should replace with the jenkins IP
-
-
-    
+  - job_name: 'pushgateway'
+    static_configs:
+      - targets: ['localhost:9091']

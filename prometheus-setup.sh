@@ -1,5 +1,5 @@
 #!/bin/bash
-# Hardware requirements: AWS Linux 2 with mimum t2.micro type instance & port 9090, should be allowed on the security groups
+# Hardware requirements: AWS Linux 2 with mimum t2.micro type instance & port 9090,9091 should be allowed on the security groups
 # Attach a role to this Prometheus server with IAM policy as --> AmazonEC2ReadOnlyAccess
 
 # Installing Git
@@ -38,3 +38,15 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus
 sudo systemctl daemon-reload
 sudo systemctl enable prometheus
 sudo systemctl start prometheus
+
+# Pushgateway installation
+wget https://github.com/prometheus/pushgateway/releases/download/v1.6.2/pushgateway-1.6.2.linux-amd64.tar.gz
+tar -xvzf pushgateway-1.6.2.linux-amd64.tar.gz
+sudo cp pushgateway /usr/local/bin/pushgateway
+sudo chown prometheus:prometheus /usr/local/bin/pushgateway
+sudo cp /tmp/monitoring-prometheus-grafana/pushgateway-dependencies/pushgateway.service /etc/systemd/system/pushgateway.service
+
+# start pushgateway
+sudo systemctl daemon-reload
+sudo systemctl enable pushgateway
+sudo systemctl start pushgateway
