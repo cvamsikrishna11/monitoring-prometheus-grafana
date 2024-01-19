@@ -1,6 +1,6 @@
 # Monitoring with Prometheus, Grafana
 
-![alt text](https://github.com/cv/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Screenshot](prom-architecture.png)
 
 With this repo we can understand the below topics
 1. Monitoring flow
@@ -10,20 +10,19 @@ With this repo we can understand the below topics
 
 ## Installations
 1. Prometheus Installation 
-    Configurations: 
-        1. OS & AMI: AWS EC2 Linux 2 Version AMI (Please be careful the AMI is the 2nd one from the drop-down)
-        2. Security Groups: Enable Ports 9090 (for prometheus) and port 9091 (for pushgateway) allow access from anywhere (just for the demonstration)
-        3. Make sure to attach an IAM role with Admin access for prometheus (for Proemetheus server to perform service discovery on the EC2 instances)
-        4. Link for the user data: https://github.com/cvamsikrishna11/monitoring-prometheus-grafana/blob/main/prometheus-setup.sh
+    1. OS & AMI: AWS EC2 Linux 2 Version AMI (Please be careful the AMI is the 2nd one from the drop-down)
+    2. Security Groups: Enable Ports 9090 (for prometheus) and port 9091 (for pushgateway) allow access from anywhere (just for the demonstration)
+    3. Make sure to attach an IAM role with Admin access for prometheus (for Proemetheus server to perform service discovery on the EC2 instances)
+    4. Link for the user data: https://github.com/cvamsikrishna11/monitoring-prometheus-grafana/blob/main/prometheus-setup.sh
 2. Launch web servers
-        1. OS & AMI: AWS EC2 Linux 2 Version AMI (Please be careful the AMI is the 2nd one from the drop-down)
-        2. No of instances: 3
-        3. Security Groups: Enable Ports 80 (for HTTP traffic of the website) and port 9100 (for node exporter) allow access from anywhere (just for the demonstration)        
-        4. Link for the user data: https://github.com/cvamsikrishna11/monitoring-prometheus-grafana/blob/main/ecommerce-web-app.sh
-3. Grafana
-        1. OS & AMI: Ubuntu Version 20.04 LTS AMI (Please be careful the AMI is the 2nd one from the drop-down)
-        2. Security Groups: Enable Ports 3000 (for Grafana)allow access from anywhere (just for the demonstration)        
-        4. Link for the user data: https://github.com/cvamsikrishna11/monitoring-prometheus-grafana/blob/main/grafana-setup.sh
+    1. OS & AMI: AWS EC2 Linux 2 Version AMI (Please be careful the AMI is the 2nd one from the drop-down)
+    2. No of instances: 3
+    3. Security Groups: Enable Ports 80 (for HTTP traffic of the website) and port 9100 (for node exporter) allow access from anywhere (just for the demonstration)        
+    4. Link for the user data: https://github.com/cvamsikrishna11/monitoring-prometheus-grafana/blob/main/ecommerce-web-app.sh
+3. Grafana Installation
+    1. OS & AMI: Ubuntu Version 20.04 LTS AMI (Please be careful the AMI is the 2nd one from the drop-down)
+    2. Security Groups: Enable Ports 3000 (for Grafana)allow access from anywhere (just for the demonstration)        
+    4. Link for the user data: https://github.com/cvamsikrishna11/monitoring-prometheus-grafana/blob/main/grafana-setup.sh
 
 ** To run the Python code to push the run time app logs to prometheus pushgateway **
 ```
