@@ -1,6 +1,6 @@
 # Monitoring with Prometheus, Grafana
 
-![Screenshot](prom-architecture.png)
+![Screenshot](prometheus-architecture.png)
 
 With this repo we can understand the below topics
 1. Monitoring flow
