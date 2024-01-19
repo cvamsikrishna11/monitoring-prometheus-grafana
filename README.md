@@ -28,7 +28,7 @@ With this repo we can understand the below topics
 ```
 git clone https://github.com/cvamsikrishna11/monitoring-prometheus-grafana.git
 cd monitoring-prometheus-grafana
-pip install -r app/requirements.txt
+pip install -r app/requirements.txt (Note: if you are on mac pip3 install -r app/requirements.txt)
 ```
 Change line number 19 of the app/shoe-hub.py file with your own Prometheus server Public IP
 
